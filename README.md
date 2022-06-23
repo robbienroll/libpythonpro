@@ -6,6 +6,7 @@ Nesse curso é ensinado como contribuir com projetos de código aberto
 Link para o curso [Python Pro](https://www.python.pro.br)
 
 [![Build Status](https://app.travis-ci.com/robbienroll/libpythonpro.svg?branch=main)](https://app.travis-ci.com/robbienroll/libpythonpro)
+[![codecov](https://codecov.io/gh/robbienroll/libpythonpro/branch/main/graph/badge.svg?token=25TVHFN4GB)](https://codecov.io/gh/robbienroll/libpythonpro)
 
 Suportada versão 3 de Python
 
