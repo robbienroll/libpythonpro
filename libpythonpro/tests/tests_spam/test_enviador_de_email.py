@@ -1,9 +1,9 @@
-from libpythonpro.spam.email_sender import Sender, EmailInvalido
+from libpythonpro.spam.enviador_de_email import Enviador, EmailInvalido
 import pytest
 
 
 def test_create_email_sender():
-    sender = Sender()
+    sender = Enviador()
     assert sender is not None
 
 
@@ -12,7 +12,7 @@ def test_create_email_sender():
     ['foo@bar.com.br', 'jukinha@gmail.com']
 )
 def test_remetente(destinatario):
-    sender = Sender()
+    sender = Enviador()
     resultado = sender.send(
         destinatario,
         'zezinho@gmail.com',
@@ -27,7 +27,7 @@ def test_remetente(destinatario):
     ['', 'jukinha']
 )
 def test_remetente_invalido(destinatario):
-    sender = Sender()
+    sender = Enviador()
     with pytest.raises(EmailInvalido):
         sender.send(
             destinatario,
