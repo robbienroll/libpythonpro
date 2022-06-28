@@ -3,7 +3,7 @@ import pytest
 from libpythonpro.spam.db import Conexao
 
 
-@pytest.fixture(scope='session') #escopos session p/ fixture ser usada apenas 1x mesmo q varios modulos a usem
+@pytest.fixture(scope='session')  # escopos session p/ fixture ser usada apenas 1x mesmo q varios modulos a usem
 def conexao():
     # setup
     conexao_obj = Conexao()
