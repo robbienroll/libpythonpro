@@ -49,6 +49,7 @@ def test_parametros_de_spam(sessao):
         'Confira os modulos fantasticos'
     )
 
+
 class EnviadorMock(Enviador):
 
     def __init__(self):
