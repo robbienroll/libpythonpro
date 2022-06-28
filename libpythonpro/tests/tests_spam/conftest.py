@@ -2,8 +2,8 @@ import pytest
 # todas estas fixtures de conftest ficarao disponiveis para os modulos de test_spam
 from libpythonpro.spam.db import Conexao
 
-# usado este escopo para a fixture ser usada apenas uma vez, mesmo que varios modulos a usem
-@pytest.fixture(scope='session')
+
+@pytest.fixture(scope='session') #escopos session p/ fixture ser usada apenas 1x mesmo q varios modulos a usem
 def conexao():
     # setup
     conexao_obj = Conexao()
@@ -15,6 +15,6 @@ def conexao():
 @pytest.fixture
 def sessao(conexao):
     sessao_obj = conexao.gerar_sessao()
-    yield  sessao_obj
+    yield sessao_obj
     sessao_obj.roll_back()
     sessao_obj.fechar()
