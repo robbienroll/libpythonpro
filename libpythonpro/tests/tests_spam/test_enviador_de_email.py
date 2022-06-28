@@ -3,8 +3,8 @@ import pytest
 
 
 def test_create_email_sender():
-    sender = Enviador()
-    assert sender is not None
+    enviador = Enviador()
+    assert enviador is not None
 
 
 @pytest.mark.parametrize(
@@ -12,8 +12,8 @@ def test_create_email_sender():
     ['foo@bar.com.br', 'jukinha@gmail.com']
 )
 def test_remetente(destinatario):
-    sender = Enviador()
-    resultado = sender.send(
+    enviador = Enviador()
+    resultado = enviador.enviar(
         destinatario,
         'zezinho@gmail.com',
         'Breja Artesanal',
@@ -27,9 +27,9 @@ def test_remetente(destinatario):
     ['', 'jukinha']
 )
 def test_remetente_invalido(destinatario):
-    sender = Enviador()
+    enviador = Enviador()
     with pytest.raises(EmailInvalido):
-        sender.send(
+        enviador.enviar(
             destinatario,
             'zezinho@gmail.com',
             'Breja Artesanal',
