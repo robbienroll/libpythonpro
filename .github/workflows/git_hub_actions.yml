@@ -1,0 +1,30 @@
+name: Django Application
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    env:
+      PIPENV_NO_INHERIT: 1
+      PIPENV_IGNORE_VIRTUALENVS: 1
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+          architecture: x64
+      - name: Instalar dependências
+        run: |
+          pip install pipenv
+          pipenv sync --dev
+      - name: Rodar Testes Automáticos
+        run: |
+          pipenv run pytest --cov=pypro
